@@ -131,33 +131,75 @@ jobs:
           EOF
           # 常用LuCI插件选择:
           cat >> .config <<EOF
-          CONFIG_PACKAGE_luci-app-adbyby-plus=y
-          CONFIG_PACKAGE_luci-app-aria2=y
-          CONFIG_PACKAGE_luci-app-baidupcs-web=y
-          CONFIG_PACKAGE_luci-app-docker=y
-          CONFIG_PACKAGE_luci-app-frpc=y
-          CONFIG_PACKAGE_luci-app-hd-idle=y
-          CONFIG_PACKAGE_luci-app-kodexplorer=y
-          CONFIG_PACKAGE_luci-app-minidlna=y
-          CONFIG_PACKAGE_luci-app-openvpn=y
-          CONFIG_PACKAGE_luci-app-openvpn-server=y
-          CONFIG_PACKAGE_luci-app-qbittorrent=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+          CONFIG_TARGET_BOARD="sunxi"
+          CONFIG_TARGET_SUBTARGET="cortexa53"
+          CONFIG_TARGET_PROFILE="DEVICE_xunlong_orangepi-zero-plus"
+          CONFIG_TARGET_ARCH_PACKAGES="aarch64_cortex-a53"
+          CONFIG_DEFAULT_TARGET_OPTIMIZATION="-Os -pipe -mcpu=cortex-a53"
+          CONFIG_CPU_TYPE="cortex-a53"
+          CONFIG_LINUX_4_19=y
+          CONFIG_DEFAULT_base-files=y
+          CONFIG_DEFAULT_block-mount=y
+          CONFIG_DEFAULT_busybox=y
+          CONFIG_DEFAULT_coremark=y
+          CONFIG_DEFAULT_ddns-scripts_aliyun=y
+          CONFIG_DEFAULT_ddns-scripts_dnspod=y
+          CONFIG_DEFAULT_default-settings=y
+          CONFIG_DEFAULT_dnsmasq-full=y
+          CONFIG_DEFAULT_dropbear=y
+          CONFIG_DEFAULT_e2fsprogs=y
+          CONFIG_DEFAULT_firewall=y
+          CONFIG_DEFAULT_fstools=y
+          CONFIG_DEFAULT_iptables=y
+          CONFIG_DEFAULT_kmod-ipt-offload=y
+          CONFIG_DEFAULT_kmod-ipt-raw=y
+          CONFIG_DEFAULT_kmod-nf-nathelper=y
+          CONFIG_DEFAULT_kmod-nf-nathelper-extra=y
+          CONFIG_DEFAULT_kmod-tcp-bbr=y
+          CONFIG_DEFAULT_libc=y
+          CONFIG_DEFAULT_libgcc=y
+          CONFIG_DEFAULT_libustream-openssl=y
+          CONFIG_DEFAULT_logd=y
+          CONFIG_DEFAULT_luci=y
+          CONFIG_DEFAULT_luci-app-accesscontrol=y
+          CONFIG_DEFAULT_luci-app-adbyby-plus=y
+          CONFIG_DEFAULT_luci-app-arpbind=y
+          CONFIG_DEFAULT_luci-app-autoreboot=y
+          CONFIG_DEFAULT_luci-app-ddns=y
+          CONFIG_DEFAULT_luci-app-filetransfer=y
+          CONFIG_DEFAULT_luci-app-flowoffload=y
+          CONFIG_DEFAULT_luci-app-nlbwmon=y
+          CONFIG_DEFAULT_luci-app-pptp-server=y
+          CONFIG_DEFAULT_luci-app-ramfree=y
+          CONFIG_DEFAULT_luci-app-sfe=y
+          CONFIG_DEFAULT_luci-app-sqm=y
+          CONFIG_DEFAULT_luci-app-ssr-plus=y
+          CONFIG_DEFAULT_luci-app-upnp=y
+          CONFIG_DEFAULT_luci-app-vlmcsd=y
+          CONFIG_DEFAULT_luci-app-vsftpd=y
+          CONFIG_DEFAULT_luci-app-wol=y
+          CONFIG_DEFAULT_mkf2fs=y
+          CONFIG_DEFAULT_mtd=y
+          CONFIG_DEFAULT_netifd=y
+          CONFIG_DEFAULT_opkg=y
+          CONFIG_DEFAULT_partx-utils=y
+          CONFIG_DEFAULT_ppp=y
+          CONFIG_DEFAULT_ppp-mod-pppoe=y
+          CONFIG_DEFAULT_uboot-envtools=y
+          CONFIG_DEFAULT_uci=y
+          CONFIG_DEFAULT_uclient-fetch=y
+          CONFIG_DEFAULT_urandom-seed=y
+          CONFIG_DEFAULT_urngd=y
           CONFIG_PACKAGE_luci-app-ttyd=y
-          CONFIG_PACKAGE_luci-app-v2ray-server=y
-          CONFIG_PACKAGE_luci-app-verysync=y
           CONFIG_PACKAGE_luci-app-webadmin=y
-          CONFIG_PACKAGE_luci-app-wireguard=y
-          CONFIG_PACKAGE_luci-app-wrtbwmon=y
           EOF
           # LuCI主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
+          CONFIG_PACKAGE_luci-theme-bootstrap=y
+          CONFIG_PACKAGE_luci-theme-material=y
           CONFIG_PACKAGE_luci-theme-netgear=y
+
           EOF
           # 常用软件包:
           cat >> .config <<EOF
@@ -168,6 +210,22 @@ jobs:
           CONFIG_PACKAGE_tree=y
           CONFIG_PACKAGE_vim-fuller=y
           CONFIG_PACKAGE_wget=y
+          CONFIG_PACKAGE_ip-full=y
+          CONFIG_PACKAGE_jsonfilter=y
+          CONFIG_PACKAGE_ca-certificates=y
+          CONFIG_PACKAGE_ca-bundle=y
+          
+          CONFIG_PACKAGE_libcurl=y
+          CONFIG_PACKAGE_python=y
+          CONFIG_PACKAGE_bash=y
+          CONFIG_DEFAULT_dnsmasq-full=y
+          CONFIG_DEFAULT_ddns-scripts_aliyun=y
+          CONFIG_DEFAULT_ddns-scripts_dnspod=y
+          CONFIG_DEFAULT_iptables=y
+          CONFIG_PACKAGE_kmod-tun=y
+          CONFIG_PACKAGE_coreutils=y
+          CONFIG_PACKAGE_coreutils-base64=y
+          CONFIG_PACKAGE_coreutils-nohup=y
           EOF
           # 取消编译VMware镜像以及镜像填充 (不要删除被缩进的注释符号):
           cat >> .config <<EOF
