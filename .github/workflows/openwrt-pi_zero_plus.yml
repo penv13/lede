@@ -64,7 +64,6 @@ jobs:
           mkdir openwrt-packages
           cd openwrt-packages
           git clone https://github.com/jerrykuku/luci-theme-argon.git
-          git clone https://github.com/jerrykuku/luci-app-vssr.git
           git clone https://github.com/vernesong/OpenClash.git
       - name: Update feeds
         run: |
@@ -162,6 +161,7 @@ jobs:
           CONFIG_DEFAULT_iptables=y
           CONFIG_DEFAULT_kmod-ipt-offload=y
           CONFIG_DEFAULT_kmod-ipt-raw=y
+          CONFIG_DEFAULT_kmod-ipip=y
           CONFIG_DEFAULT_kmod-nf-nathelper=y
           CONFIG_DEFAULT_kmod-nf-nathelper-extra=y
           CONFIG_DEFAULT_kmod-tcp-bbr=y
@@ -196,8 +196,14 @@ jobs:
           CONFIG_DEFAULT_urandom-seed=y
           CONFIG_DEFAULT_urngd=y
           CONFIG_PACKAGE_luci-app-ttyd=y
-          CONFIG_PACKAGE_luci-app-vssr=y
           CONFIG_PACKAGE_luci-app-openclash=y
+          CONFIG_PACKAGE_luci-app-ssr-plus=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
           EOF
           # LuCI主题:
           cat >> .config <<EOF
