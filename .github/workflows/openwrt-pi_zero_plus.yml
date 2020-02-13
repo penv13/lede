@@ -204,6 +204,8 @@ jobs:
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
           CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+          CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
+          CONFIG_PACKAGE_shadowsocksr-libev-alt=y
           CONFIG_PACKAGE_docker-ce=y
           CONFIG_DOCKER_KERNEL_OPTIONS=y
           CONFIG_DOCKER_RES_SHAPE=y
