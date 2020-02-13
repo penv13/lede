@@ -13,11 +13,6 @@ on:
   push:
     branches: 
       - master
-  #     ↑↑↑ 改成你的分支名, 一般是master
-    schedule:
-      - cron: 0 20 * * *
-    release:
-      types: [published]
 
 jobs:
   build:
@@ -64,7 +59,6 @@ jobs:
           mkdir openwrt-packages
           cd openwrt-packages
           git clone https://github.com/jerrykuku/luci-theme-argon.git
-          git clone https://github.com/jerrykuku/luci-app-vssr.git
           git clone https://github.com/vernesong/OpenClash.git
       - name: Update feeds
         run: |
@@ -203,7 +197,20 @@ jobs:
           CONFIG_PACKAGE_ipt2socks=y
           CONFIG_PACKAGE_shadowsocksr-libev-server=y
           CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
-          CONFIG_PACKAGE_luci-app-vssr=y
+          CONFIG_PACKAGE_luci-app-ssr-plus=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
+          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
+          CONFIG_PACKAGE_docker-ce=y
+          CONFIG_DOCKER_KERNEL_OPTIONS=y
+          CONFIG_DOCKER_RES_SHAPE=y
+          CONFIG_DOCKER_NET_MACVLAN=y
+          CONFIG_DOCKER_STO_EXT4=y
+          CONFIG_PACKAGE_luci-app-docker=y
+          CONFIG_PACKAGE_luci-i18n-docker-zh-cn=y
           EOF
           # LuCI主题:
           cat >> .config <<EOF
@@ -230,6 +237,7 @@ jobs:
           CONFIG_PACKAGE_python=y
           CONFIG_PACKAGE_bash=y
           CONFIG_DEFAULT_dnsmasq-full=y
+          CONFIG_PACKAGE_luci-app-dnspod=y
           CONFIG_DEFAULT_ddns-scripts_aliyun=y
           CONFIG_DEFAULT_ddns-scripts_dnspod=y
           CONFIG_DEFAULT_iptables=y
