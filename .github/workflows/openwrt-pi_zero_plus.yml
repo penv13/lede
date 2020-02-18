@@ -56,6 +56,7 @@ jobs:
       - name: Add Customized Themes and Apps
         run: |
           cd package/lean
+          rm -rf luci-theme-argon
           git clone https://github.com/jerrykuku/luci-theme-argon.git
           git clone https://github.com/vernesong/OpenClash.git
           git clone https://github.com/jerrykuku/lua-maxminddb.git lua-maxminddb
