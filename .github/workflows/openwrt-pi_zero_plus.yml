@@ -261,6 +261,7 @@ jobs:
           # 
           sed -i 's/^[ \t]*//g' ./.config
           make defconfig
+          
       - name: Download package source code
         run: |
           make download -j8
@@ -270,6 +271,10 @@ jobs:
         run: |
           echo -e "$(nproc) thread build."
           make -j$(nproc) V=s
+
+      - name: Check error
+        run: |
+          make -j1 V=s
       - name : Upload artifact
         uses: actions/upload-artifact@master
         with:
