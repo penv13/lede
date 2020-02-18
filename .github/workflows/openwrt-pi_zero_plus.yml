@@ -202,6 +202,8 @@ jobs:
           CONFIG_PACKAGE_shadowsocksr-libev-alt=y
           CONFIG_PACKAGE_luci-app-vssr=y
           CONFIG_PACKAGE_lua-maxminddb=y
+          CONFIG_PACKAGE_luci-app-flowoffload=y
+          CONFIG_PACKAGE_kmod-tcp-bbr=y
           EOF
           # LuCI主题:
           cat >> .config <<EOF
