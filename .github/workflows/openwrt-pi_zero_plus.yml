@@ -55,13 +55,11 @@ jobs:
       
       - name: Add Customized Themes and Apps
         run: |
-          cd package
-          mkdir openwrt-packages
-          cd openwrt-packages
+          cd package/lean
           git clone https://github.com/jerrykuku/luci-theme-argon.git
           git clone https://github.com/vernesong/OpenClash.git
-          git clone https://github.com/jerrykuku/lua-maxminddb.git package/lean/lua-maxminddb
-          git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-vssr
+          git clone https://github.com/jerrykuku/lua-maxminddb.git lua-maxminddb
+          git clone https://github.com/jerrykuku/luci-app-vssr.git luci-app-vssr
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
