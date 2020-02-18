@@ -198,22 +198,8 @@ jobs:
           CONFIG_PACKAGE_ipt2socks=y
           CONFIG_PACKAGE_shadowsocksr-libev-server=y
           CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
-          CONFIG_PACKAGE_luci-app-ssr-plus=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Shadowsocks=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_V2ray=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Trojan=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_Kcptun=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Server=y
-          CONFIG_PACKAGE_luci-app-ssr-plus_INCLUDE_ShadowsocksR_Socks=y
           CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
           CONFIG_PACKAGE_shadowsocksr-libev-alt=y
-          CONFIG_PACKAGE_docker-ce=y
-          CONFIG_DOCKER_KERNEL_OPTIONS=y
-          CONFIG_DOCKER_RES_SHAPE=y
-          CONFIG_DOCKER_NET_MACVLAN=y
-          CONFIG_DOCKER_STO_EXT4=y
-          CONFIG_PACKAGE_luci-app-docker=y
-          CONFIG_PACKAGE_luci-i18n-docker-zh-cn=y
           CONFIG_PACKAGE_luci-app-vssr=y
           CONFIG_PACKAGE_lua-maxminddb=y
           EOF
