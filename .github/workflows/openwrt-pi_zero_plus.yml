@@ -59,8 +59,6 @@ jobs:
           rm -rf luci-theme-argon
           git clone https://github.com/jerrykuku/luci-theme-argon.git
           git clone https://github.com/vernesong/OpenClash.git
-          git clone https://github.com/jerrykuku/lua-maxminddb.git lua-maxminddb
-          git clone https://github.com/jerrykuku/luci-app-vssr.git luci-app-vssr
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
@@ -146,8 +144,6 @@ jobs:
           CONFIG_DEFAULT_block-mount=y
           CONFIG_DEFAULT_busybox=y
           CONFIG_DEFAULT_coremark=y
-          CONFIG_DEFAULT_ddns-scripts_aliyun=y
-          CONFIG_DEFAULT_ddns-scripts_dnspod=y
           CONFIG_DEFAULT_default-settings=y
           CONFIG_DEFAULT_dnsmasq-full=y
           CONFIG_DEFAULT_dropbear=y
@@ -169,7 +165,6 @@ jobs:
           CONFIG_DEFAULT_luci-app-accesscontrol=y
           CONFIG_DEFAULT_luci-app-arpbind=y
           CONFIG_DEFAULT_luci-app-autoreboot=y
-          CONFIG_DEFAULT_luci-app-ddns=y
           CONFIG_DEFAULT_luci-app-filetransfer=y
           CONFIG_DEFAULT_luci-app-flowoffload=y
           CONFIG_DEFAULT_luci-app-nlbwmon=y
@@ -193,24 +188,14 @@ jobs:
           CONFIG_DEFAULT_urngd=y
           CONFIG_PACKAGE_luci-app-ttyd=y
           CONFIG_PACKAGE_luci-app-openclash=y
-          CONFIG_PACKAGE_v2ray=y
-          CONFIG_PACKAGE_trojan=y
           CONFIG_PACKAGE_ipt2socks=y
-          CONFIG_PACKAGE_shadowsocksr-libev-server=y
-          CONFIG_PACKAGE_shadowsocksr-libev-ssr-local=y
-          CONFIG_PACKAGE_shadowsocks-libev-ss-redir=y
-          CONFIG_PACKAGE_shadowsocksr-libev-alt=y
-          CONFIG_PACKAGE_luci-app-vssr=y
-          CONFIG_PACKAGE_lua-maxminddb=y
-          CONFIG_PACKAGE_luci-app-flowoffload=y
-          CONFIG_PACKAGE_kmod-tcp-bbr=y
+
+          
           EOF
           # LuCI主题:
           cat >> .config <<EOF
           CONFIG_PACKAGE_luci-theme-argon=y
-          CONFIG_PACKAGE_luci-theme-bootstrap=y
           CONFIG_PACKAGE_luci-theme-material=y
-          CONFIG_PACKAGE_luci-theme-netgear=y
 
           EOF
           # 常用软件包:
@@ -229,11 +214,6 @@ jobs:
           CONFIG_PACKAGE_libcurl=y
           CONFIG_PACKAGE_python=y
           CONFIG_PACKAGE_bash=y
-          CONFIG_DEFAULT_dnsmasq-full=y
-          CONFIG_PACKAGE_luci-app-dnspod=y
-          CONFIG_DEFAULT_ddns-scripts_aliyun=y
-          CONFIG_DEFAULT_ddns-scripts_dnspod=y
-          CONFIG_DEFAULT_iptables=y
           CONFIG_PACKAGE_kmod-tun=y
           CONFIG_PACKAGE_coreutils=y
           CONFIG_PACKAGE_coreutils-base64=y
